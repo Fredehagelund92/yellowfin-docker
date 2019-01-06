@@ -1,0 +1,21 @@
+version: '2'
+services:
+  yellowfin:
+    image: yellowfin
+    build:
+      context: yellowfin/.
+      args:
+        YELLOWFIN_VERSION: ${YELLOWFIN_VERSION}
+    ports:
+      - ${YELLOWFIN_EXTERNAL_PORT}:7900
+    tty: true
+    links:
+      - postgres
+    volumes:
+      - ./yellowfin_installation:/opt/yellowfin:rw
+  postgres:
+    image: postgres:${POSTGRES_VERSION}
+    ports:
+      - ${POSTGRES_EXTERNAL_PORT}:5432
+    volumes:
+      - ./postgres_db:/var/lib/postgresql/data
