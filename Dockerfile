@@ -1,13 +1,11 @@
 FROM  ubuntu:18.04
 
-MAINTAINER  Author Viteco <info@viteco.dk>
+MAINTAINER  Author Frederik <frederik.hagelund@gmail.dk>
 
-RUN apt-get update && \
-    apt-get upgrade && \
-    apt-get install -y gnupg && \
+RUN apt-get -y update && \
     apt-get install -y wget && \
-    apt-get -y install sudo && \
-    sudo apt-get clean
+    apt-get install -y sudo && \
+    sudo -y apt-get clean
 
 USER root
 
