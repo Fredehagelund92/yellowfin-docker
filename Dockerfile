@@ -5,7 +5,7 @@ MAINTAINER  Author Frederik <frederik.hagelund@gmail.dk>
 RUN apt-get -y update && \
     apt-get install -y wget && \
     apt-get install -y sudo && \
-    sudo -y apt-get clean
+    apt-get -y clean
 
 USER root
 
