@@ -1,6 +1,6 @@
 FROM  ubuntu:18.04
 
-MAINTAINER  Author Frederik <frederik.hagelund@gmail.dk>
+MAINTAINER  Author Frederik <frederik.hagelund@gmail.com>
 
 RUN apt-get -y update && \
     apt-get install -y wget && \
